@@ -1,0 +1,23 @@
+{
+  "name": "cypress-cucumber-practice1",
+  "version": "2.0.0",
+  "description": "Practice Cypress with Cucumber Framework from scratch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cypress",
+    "cucumber"
+  ],
+  "author": "fadspadilla",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.14.1",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitins": true,
+    "step_definitions": "cypress/e2e/step_definitions"
+  }
+}

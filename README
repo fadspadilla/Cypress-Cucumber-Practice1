@@ -1,0 +1,28 @@
+YOUTUBE SOURCE:
+https://www.youtube.com/watch?v=TGLQN3xEnaU
+
+1. npm init
+2. npm install cypress --save-dev
+3. npm i -D cypress cypress-cucumber-preprocessor
+    npm install --save-dev cypress-cucumber-preprocessor
+4. npx cypress open
+    This should add other files, like cypress.config.js
+5. Update Package.json
+"cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitins": true,
+    "step_definitions": "cypress/e2e/step_definitions"
+  }
+6. update cypress.config.js
+const cucumber = require('cypress-cucumber-preprocessor').default
+const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+  e2e: {
+    setupNodeEvents(on, config) {
+      on('file:preprocessor', cucumber())
+    },
+    specPattern: "cypress/e2e/features/*.feature",
+    include: ["**/*.ts"]
+  },
+});
+
