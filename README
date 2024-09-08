@@ -26,3 +26,6 @@ module.exports = defineConfig({
   },
 });
 
+6. Install xpath for locators
+npm install --save-dev cypress-xpath
+
